@@ -1,0 +1,97 @@
+@use "mixins";
+@use "colors";
+@use "fonts";
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+      @content;
+  }
+}
+
+.footer {
+    grid-row: 4 / 5;
+    grid-column: -1 / 1;
+    background-color: colors.$primary;
+    color: white;
+    padding: 100px 7%;
+
+    &__wrapper {
+
+      @include desktop {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__title {
+      padding: 0;
+      margin: 10px 0;
+      font-family: fonts.$serif;
+      letter-spacing: 0.7px;
+      font-weight: 400;
+      font-size: 15px; 
+      color:rgba(190, 189, 189, 0.722);
+      
+      @include desktop {
+        display: inline-block;
+      }
+      
+    }
+
+    &__subtitle {
+      padding: 0;
+      margin: 0;
+      font-weight: 400;
+      font-size: 15px;
+      display: inline-block;
+      font-family: fonts.$sans;
+      color: colors.$special;
+
+      @include desktop {
+        display: inline-block;
+      }
+    }
+
+    &__info {
+      @include desktop {
+        margin-right: 50px;
+    }
+   }
+
+    &__text {
+      color: white;
+      font-size: 15px;
+      font-family: fonts.$sans;
+      margin: 20px 0;
+
+      @include desktop {
+        margin: 15px 0;
+
+    }
+  }
+
+  &__href {
+    color: white;
+  }
+
+ 
+    &__logo {
+        width: 70%;
+        margin-bottom: 30px;
+
+      @include desktop {
+        width: 25em;
+        margin-bottom: 120px;
+        margin-right: 50px;
+    }
+    }
+
+    &__instagram {
+      width: 35px;
+
+      @include desktop {
+        margin-bottom: 10px;
+    }
+    }
+
+}

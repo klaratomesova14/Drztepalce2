@@ -1,0 +1,118 @@
+@use "mixins";
+@use "colors";
+@use "fonts";
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+      @content;
+  }
+}
+
+.complementary {
+    font-family: fonts.$sans;
+
+    @include desktop {
+        grid-row: 1 / -1;
+        grid-column: 2 / 3;
+        
+    }    
+}
+
+.title--complementary {
+    font-family: fonts.$serif;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border: 2px solid colors.$complementary;
+}
+
+.author {
+    margin-bottom: 50px;
+
+    &__picture {
+      max-width: 280px;
+      display: block;
+      margin: 5px auto 20px auto;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0 25px;
+        font-size: 14px;
+        line-height: 1.5;
+
+    }
+  }
+  
+  
+.news {
+    margin-bottom: 60px;
+  
+    &__item {
+      display: flex;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    &__circle {
+      border-radius: 50%;
+      background-color: colors.$complementary;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+    }
+
+    &__text {
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
+    } 
+}
+
+
+.text--special {
+    color: white;
+    font-size: 11px;
+    line-height: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+  }
+  
+.poster {
+    position: relative;
+    margin: 0 auto;
+
+&__picture {
+    width: 100%;
+}
+
+&__button {
+    position: absolute;
+    bottom: 7%;
+    right: 12%;
+    font-size: 15px;
+    background-color: colors.$complementary-darker;
+    color: white;
+    font-weight: 500;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+    background-color: colors.$complementary-darkest;
+    }
+}
+
+&__text {
+    position: absolute;
+    bottom: 22%;
+    left: 10%;
+    color: colors.$primary;
+    font-weight: 400;
+}
+}
